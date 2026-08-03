@@ -552,14 +552,34 @@ body{background:var(--cr);color:var(--tx);min-height:100vh;}
   <!-- 複製按鈕：最頂部，第一眼就看到 -->
   <div style="background:linear-gradient(135deg,#5c7a5a,#8faa8b);border-radius:20px;padding:22px 18px;margin-bottom:16px;box-shadow:0 8px 28px rgba(92,122,90,.4);">
     <div style="text-align:center;margin-bottom:16px;">
-      <div style="font-size:22px;font-weight:700;color:#fff;margin-bottom:8px;letter-spacing:1px;">📋 複製訂單傳給店家</div>
-      <div style="font-size:15px;color:rgba(255,255,255,.92);line-height:2.2;">
-        ① 點下方按鈕複製<br>② 私訊給闆娘<br>③ 等待確認 ✅
+      <div style="font-size:22px;font-weight:700;color:#fff;margin-bottom:6px;letter-spacing:1px;">📋 複製訂單資料</div>
+      <div style="font-size:14px;color:rgba(255,255,255,.85);line-height:1.8;">
+        複製後，點下方按鈕直接開啟私訊傳給闆娘
       </div>
     </div>
-    <button id="copyBtn" style="width:100%;padding:20px;border-radius:16px;border:3px solid rgba(255,255,255,.5);background:#fff;color:#5c7a5a;font-size:22px;font-weight:700;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.2);display:flex;align-items:center;justify-content:center;gap:12px;font-family:inherit;-webkit-appearance:none;appearance:none;letter-spacing:1px;">
-      📋 點此複製訂單
+    <!-- 複製按鈕 -->
+    <button id="copyBtn" style="width:100%;padding:20px;border-radius:14px;border:3px solid rgba(255,255,255,.5);background:#fff;color:#5c7a5a;font-size:20px;font-weight:700;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.2);display:flex;align-items:center;justify-content:center;gap:10px;font-family:inherit;-webkit-appearance:none;appearance:none;margin-bottom:12px;transition:all .3s;">
+      📋 點此複製訂單資料
     </button>
+    <!-- 傳送按鈕區（複製後才顯示）-->
+    <div id="sendBtns" style="display:none;">
+      <div style="text-align:center;font-size:14px;color:rgba(255,255,255,.92);margin-bottom:10px;font-weight:700;">✅ 已複製！請選擇平台私訊給闆娘</div>
+      <div style="display:flex;gap:10px;margin-bottom:10px;">
+        <a href="https://m.me/lachoupatisserie" target="_blank"
+           style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:16px 10px;border-radius:14px;background:#1877f2;color:#fff;text-decoration:none;font-size:16px;font-weight:700;box-shadow:0 3px 10px rgba(0,0,0,.2);">
+          💙 FB 私訊闆娘
+        </a>
+        <a href="https://ig.me/m/jimondessert" target="_blank"
+           style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:16px 10px;border-radius:14px;background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff;text-decoration:none;font-size:16px;font-weight:700;box-shadow:0 3px 10px rgba(0,0,0,.2);">
+          💗 IG 私訊闆娘
+        </a>
+      </div>
+      <div style="background:rgba(255,255,255,.15);border-radius:10px;padding:10px 13px;font-size:13px;color:rgba(255,255,255,.9);line-height:1.8;text-align:center;">
+        💡 點按鈕會直接開啟 App 私訊<br>
+        若跳出登入畫面，請直接開啟 FB 或 IG App<br>
+        搜尋「<strong>吉門製甜</strong>」後貼上訂單即可 😊
+      </div>
+    </div>
   </div>
 
   <!-- 修改按鈕 -->
@@ -616,8 +636,8 @@ body{background:var(--cr);color:var(--tx);min-height:100vh;}
   <!-- 私訊連結 -->
   <div class="soc">
     <div class="sot">📨 複製完成後，點此傳送給闆娘</div>
-    <a class="sol fb" href="https://www.facebook.com/share/1BxR9s1ri9/?mibextid=wwXIfr" target="_blank"><div class="soi">💙</div><div class="sot2"><strong>Facebook 私訊</strong><span>lachoupatisserie（第一推薦）</span></div><div class="soa">›</div></a>
-    <a class="sol ig" href="https://www.instagram.com/jimondessert?igsh=MWYxeG44dmEyczNzcg%3D%3D&utm_source=qr" target="_blank"><div class="soi">💗</div><div class="sot2"><strong>Instagram 私訊</strong><span>@jimondessert</span></div><div class="soa">›</div></a>
+    <a class="sol fb" href="https://m.me/lachoupatisserie" target="_blank"><div class="soi">💙</div><div class="sot2"><strong>Facebook 私訊</strong><span>lachoupatisserie（第一推薦）</span></div><div class="soa">›</div></a>
+    <a class="sol ig" href="https://ig.me/m/jimondessert" target="_blank"><div class="soi">💗</div><div class="sot2"><strong>Instagram 私訊</strong><span>@jimondessert</span></div><div class="soa">›</div></a>
   </div>
 
   <!-- 地圖 -->
@@ -647,12 +667,12 @@ body{background:var(--cr);color:var(--tx);min-height:100vh;}
   <div class="modal">
     <div class="modal-title">✅ 訂單已複製！</div>
     <div class="modal-sub">請立即傳送給闆娘<br>確認訂單才算完成喔 😊</div>
-    <a class="modal-btn fb" href="https://www.facebook.com/share/1BxR9s1ri9/?mibextid=wwXIfr" target="_blank">
+    <a class="modal-btn fb" href="https://m.me/lachoupatisserie" target="_blank">
       <div class="modal-icon">💙</div>
       <div class="modal-txt"><strong>Facebook 私訊</strong><span>lachoupatisserie（第一推薦）</span></div>
       <div class="modal-arrow">›</div>
     </a>
-    <a class="modal-btn ig" href="https://www.instagram.com/jimondessert?igsh=MWYxeG44dmEyczNzcg%3D%3D&utm_source=qr" target="_blank">
+    <a class="modal-btn ig" href="https://ig.me/m/jimondessert" target="_blank">
       <div class="modal-icon">💗</div>
       <div class="modal-txt"><strong>Instagram 私訊</strong><span>@jimondessert</span></div>
       <div class="modal-arrow">›</div>
@@ -911,6 +931,16 @@ function renderOrder(){
   if(S.forkQ>0)tc+="<div class='tl'><span>🍴 叉盤組 ×"+S.forkQ+"</span><span>+$"+(S.forkQ*20)+"</span></div>";
   tc+="<div class='tdiv'></div><div class='tfin'><span class='tlab'>💰 合計</span><span class='tamt'>$"+S.total+"</span></div>";
   document.getElementById("totCard").innerHTML=tc;
+  // 重置複製按鈕狀態
+  var copyBtnEl=document.getElementById("copyBtn");
+  if(copyBtnEl){
+    copyBtnEl.innerHTML="📋 點此複製訂單資料";
+    copyBtnEl.style.background="#fff";
+    copyBtnEl.style.color="#5c7a5a";
+    copyBtnEl.style.border="3px solid rgba(255,255,255,.5)";
+  }
+  var sbEl=document.getElementById("sendBtns");
+  if(sbEl)sbEl.style.display="none";
   // 顯示客人選擇的造型照片
   var src=document.getElementById("styleResultCard");
   var simg=document.getElementById("styleResultImg");
@@ -946,17 +976,29 @@ function renderOrder(){
 }
 
 function selAll(ta){ta.focus();ta.select();try{ta.setSelectionRange(0,99999);}catch(e){}}
-function showOverlay(){
-  var ov=document.getElementById("sendOverlay");
-  if(ov)ov.classList.add("on");
+function showCopySuccess(){
+  // 按鈕變成「已複製」狀態
+  var btn=document.getElementById("copyBtn");
+  if(btn){
+    btn.innerHTML="✅ 訂單已複製！";
+    btn.style.background="#e8f5e9";
+    btn.style.color="#2e7d32";
+    btn.style.border="3px solid #81c784";
+  }
+  // 顯示傳送按鈕
+  var sb=document.getElementById("sendBtns");
+  if(sb){
+    sb.style.display="block";
+    setTimeout(function(){sb.scrollIntoView({behavior:"smooth",block:"center"});},300);
+  }
 }
 function doCopy(){
   var ta=document.getElementById("copyArea");
   if(navigator.clipboard&&navigator.clipboard.writeText){
-    navigator.clipboard.writeText(ta.value).then(function(){showOverlay();}).catch(function(){fbCopy(ta);});
+    navigator.clipboard.writeText(ta.value).then(function(){showCopySuccess();}).catch(function(){fbCopy(ta);});
   }else fbCopy(ta);
 }
-function fbCopy(ta){selAll(ta);try{document.execCommand("copy");showOverlay();}catch(e){showToast("請長按文字框手動複製");}}
+function fbCopy(ta){selAll(ta);try{document.execCommand("copy");showCopySuccess();}catch(e){showToast("請長按文字框手動複製");}}
 function showToast(msg){var t=document.getElementById("toast");t.textContent=msg;t.classList.add("on");setTimeout(function(){t.classList.remove("on");},2800);}
 
 function doRestart(){
